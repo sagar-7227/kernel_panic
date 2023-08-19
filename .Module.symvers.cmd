@@ -1,0 +1,1 @@
+savedcmd_/home/sagar/Desktop/kernel_panic/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/sagar/Desktop/kernel_panic/Module.symvers -T /home/sagar/Desktop/kernel_panic/modules.order -i Module.symvers -e 

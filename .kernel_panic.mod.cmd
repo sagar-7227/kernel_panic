@@ -1,0 +1,1 @@
+savedcmd_/home/sagar/Desktop/kernel_panic/kernel_panic.mod := printf '%s\n'   kernel_panic.o | awk '!x[$$0]++ { print("/home/sagar/Desktop/kernel_panic/"$$0) }' > /home/sagar/Desktop/kernel_panic/kernel_panic.mod
