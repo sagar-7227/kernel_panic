@@ -1,18 +1,15 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-void trigger_kernel_panic(void) {
-    panic("Triggering kernel panic for research purposes");
-}
 
 static int __init kernel_panic_init(void) {
-    printk(KERN_INFO "Kernel Panic Module loaded\n");
-    trigger_kernel_panic();
+    printk(KERN_ALERT "Simulating kernel panic (this is not a real panic)\n");
+    panic("Triggering kernel panic for research purposes");
     return 0;
 }
 
 static void __exit kernel_panic_exit(void) {
-    printk(KERN_INFO "Kernel Panic Module unloaded\n");
+    printk(KERN_INFO "Test panic module unloaded\n");
 }
 
 module_init(kernel_panic_init);
