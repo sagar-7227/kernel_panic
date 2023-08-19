@@ -1,0 +1,38 @@
+From 0912595a779229c3b9aa8daafdaf2d0a3d0178d3 Mon Sep 17 00:00:00 2001
+From: sagar-7227 <sagarvashnav72427@gmail.com>
+Date: Sat, 19 Aug 2023 04:16:01 -0400
+Subject: [PATCH] kernel panic
+
+---
+ kernel_panic.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+
+diff --git a/kernel_panic.c b/kernel_panic.c
+index ee9dbd4..8647546 100644
+--- a/kernel_panic.c
++++ b/kernel_panic.c
+@@ -1,18 +1,15 @@
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ 
+-void trigger_kernel_panic(void) {
+-    panic("Triggering kernel panic for research purposes");
+-}
+ 
+ static int __init kernel_panic_init(void) {
+-    printk(KERN_INFO "Kernel Panic Module loaded\n");
+-    trigger_kernel_panic();
++    printk(KERN_ALERT "Simulating kernel panic (this is not a real panic)\n");
++    panic("Triggering kernel panic for research purposes");
+     return 0;
+ }
+ 
+ static void __exit kernel_panic_exit(void) {
+-    printk(KERN_INFO "Kernel Panic Module unloaded\n");
++    printk(KERN_INFO "Test panic module unloaded\n");
+ }
+ 
+ module_init(kernel_panic_init);
+-- 
+2.34.1
+
